@@ -1,0 +1,377 @@
+;====================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = #151515
+foreground = ${xrdb:foreground}
+color0 = ${xrdb:color0}
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2}
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+color5 = ${xrdb:color5}
+
+color8 = ${xrdb:color8}
+color9 = ${xrdb:color9}
+color10 = ${xrdb:color10}
+color11 = ${xrdb:color11}
+color12 = ${xrdb:color12}
+color13 = ${xrdb:color13}
+color14 = ${xrdb:color14}
+color15 = ${xrdb:color15}
+dark-light = #272A2B 
+active-light = #313435
+
+[bar/left]
+monitor = eDP1
+width = 15%
+height = 30
+offset-x = 2%
+offset-y = 0.2%
+background = #151515
+radius = 11
+font-0 = CaskaydiaCove Nerd Font:style:Bold:pixelsize=9;2
+font-1 = CaskaydiaCove Nerd Font:size=12;1
+font-2 = unifont:pixelsize=10;2
+wm-restack = bspwm
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+cursor-click = pointer
+cursor-scroll = ns-resize
+modules-center = bspwm
+
+[bar/center]
+monitor = eDP1
+width = 12%
+height = 30
+offset-x = 44.5%
+offset-y = 0.2%
+background = #151515
+radius = 11
+font-0 = CaskaydiaCove Nerd Font:style:Bold:pixelsize=9;2
+wm-restack = bspwm
+cursor-click = pointer
+cursor-scroll = ns-resize
+modules-center = xwindow
+
+[bar/right]
+monitor = eDP1
+width = 27%
+height = 30
+offset-x = 71%
+offset-y = 0.2%
+background = #151515
+radius = 12
+font-0 = CaskaydiaCove Nerd Font:style:Bold:pixelsize=9;2
+font-1 = CaskaydiaCove Nerd Font:size=12;1
+font-2 = unifont:pixelsize=10;2
+wm-restack = bspwm
+cursor-click = pointer
+modules-center = temperature mem wlan pulseaudio battery1 battery0  date powermenu
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:..% 
+label-maxlen = 20
+label-foreground = #D8DEE9 
+label-padding = 1 
+
+; Used instead of label when there is no window title
+label-empty = "Desktop"
+;label-empty-foreground = ${color.blue-light}
+label-empty-padding = 2
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-foreground = #88c0d0 
+label-mounted = %{F#88C0D0}%mountpoint%%{F-}: %percentage_used% %{F#99C0D0}
+label-unmounted = %mountpoint% not mounted
+label-mounted-underline = #88c0d0
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+inline-mode = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = false
+format = <label-state>
+
+ws-icon-0 =I;%{F#c29133}
+ws-icon-1 =II;%{F#AD7EA8}
+ws-icon-2 =III;%{F#ef5f73}
+ws-icon-3 =IV;%{F#87c155}
+ws-icon-4 =V;%{F#10899b}
+ws-icon-5 =VI;%{F#7c30cb}
+
+label-focused = %icon%
+label-focused-background= #000
+label-focused-padding = 1.5
+
+label-occupied = %icon%
+label-occupied-padding = 1.5
+label-occupied-foreground = #4C566A
+
+label-urgent = %icon%
+label-urgent-padding = 1
+label-urgent-background = #a8badb
+
+label-empty = %icon%
+label-empty-foreground = #D8DEE9
+label-empty-padding = 1
+
+; Separator in between workspaces
+ label-separator = " "
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+;label-mode-foreground = #000
+;label-mode-background = "#87c155"
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+[module/menu]
+type = custom/text
+content = 
+content-background = #101010
+content-foreground = #4C566A
+click-left = dmenu_run -l 17 -p RUN 
+;content-underline = #4C566A
+content-padding= 1 
+
+[module/powermenu]
+type = custom/text
+content = " " 
+click-left = ~/.config/polybar/scripts/dmenu.sh &
+content-foreground = #ce77be
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "cpu  "
+format-prefix-foreground = #d08770
+format-underline = #ff79c6
+label = %percentage%
+label-foreground = #ff79c6 
+label-padding = 1 
+
+[module/mem]
+type = custom/script
+exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
+format = <label>
+label =  %output% 
+label-padding = 1
+label-foreground = #70ace0
+format-margin =1 
+
+[module/wlan]
+type = internal/network
+interface = wlo1
+interval = 5.0 
+format-connected = <label-connected>
+label-connected =" "  
+label-connected-foreground = #8670e0
+format-disconnected = <label-disconnected>
+label-disconnected= 
+label-disconnected-foreground = #CF727B
+
+[module/date]
+type = internal/date
+interval = 60 
+time = "%I:%M"
+date-alt = "%d %b %a"
+label-foreground = #eee 
+format-padding = 1 
+label = %time% %date%
+format-margin = 1
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume>
+label-volume = %{F#fcdc9c} %percentage%%{F-}
+format-volume-padding = 1
+label-muted-padding = 1
+label-volume-padding = 1
+;will remove
+label-muted =" M "
+label-muted-foreground = #fcdc9c
+format-margin = 1 
+
+[module/battery1]
+type = internal/battery
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = AC
+; Default: 5
+poll-interval = 2
+
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <label-charging>
+format-charging-prefix = "⌁"
+format-charging-prefix-foreground = "#a3be8c"
+format-charging-foreground = "#a3be8c"
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <label-discharging>
+format-discharging-prefix = ""
+format-discharging-prefix-foreground = "#CF727B"
+format-discharging-foreground = "#CF727B"
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-full = <label-full>
+;format-full-prefix = 
+;format-full-prefix-foreground = ${color.red}
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = " %percentage%%"
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = " %percentage%%"
+
+; Available tokens:
+;   %percentage% (default)
+label-full = "  " 
+
+; Only applies if <ramp-capacity> is used
+;ramp-capacity-0 = 
+;ramp-capacity-1 = 
+;ramp-capacity-2 = 
+;ramp-capacity-3 = 
+;ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+;bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/battery0]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+
+poll-interval = 2
+format-charging = <label-charging>
+format-charging-prefix = ""
+format-charging-prefix-foreground = "#a3be8c"
+format-discharging = <label-discharging>
+format-discharging-prefix = ""
+format-discharging-prefix-foreground = "#CF727B"
+format-charging-foreground = "#a3be8c"
+format-discharging-foreground = "#CF727B"
+label-charging = " %percentage%%"
+label-discharging = " %percentage%%"
+label-full = "  "
+label-full-foreground = "#7bd1ad"
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+label-foreground = #e09e70
+format = <ramp> <label>
+format-warn = <ramp>  <label-warn>
+format-warn-underline = #b48ead
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = #f2835e 
+ramp-0 = 
+ramp-foreground = #e09e70
+
+[settings]
+screenchange-reload = true
+;compositing-background = picom
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 3
+margin-bottom = 3
+
+; vim:ft=dosini

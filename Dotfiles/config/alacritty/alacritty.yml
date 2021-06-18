@@ -1,0 +1,37 @@
+draw_bold_text_with_bright_colors: true
+
+colors:
+  name: heXa
+  primary:
+    background: "#151515"
+    foreground: "#ffffff"
+  cursor:
+   text: "#eda444"
+   cursor: "#fed17c"
+# Normal colors
+  normal:
+    black:   '0x333333'
+    red:     '0xef5f73'
+    green:   '0x92f47f'
+    yellow:  '0xc4a000'
+    blue:    '0x3465a4'
+    magenta: '0x75507b'
+    cyan:    '0x06989a'
+    white:   '0xd3d7cf'
+
+  # Bright colors
+  bright:
+    black:   '0x88807c'
+    red:     '0xef5f73'
+    green:   '0x63ed91'
+    yellow:  '0xffce51'
+    blue:    '0x48b9c7'
+    magenta: '0xad7fa8'
+    cyan:    '0x34e2e2'
+    white:   '0xeeeeec'
+
+font:
+  normal:
+    family: CaskaydiaCove Nerd Font
+    style: Bold
+  size: 11.5
