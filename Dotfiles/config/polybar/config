@@ -39,7 +39,7 @@ active-light = #313435
 
 [bar/left]
 monitor = eDP1
-width = 15%
+width = 16%
 height = 30
 offset-x = 2%
 offset-y = 0.2%
@@ -55,19 +55,19 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 modules-center = bspwm
 
-[bar/center]
-monitor = eDP1
-width = 12%
-height = 30
-offset-x = 44.5%
-offset-y = 0.2%
-background = #151515
-radius = 11
-font-0 = CaskaydiaCove Nerd Font:style:Bold:pixelsize=9;2
-wm-restack = bspwm
-cursor-click = pointer
-cursor-scroll = ns-resize
-modules-center = xwindow
+;[bar/center]
+;monitor = eDP1
+;width = 12%
+;height = 30
+;offset-x = 44.5%
+;offset-y = 0.2%
+;background = #151515
+;radius = 11
+;font-0 = CaskaydiaCove Nerd Font:style:Bold:pixelsize=9;2
+;wm-restack = bspwm
+;cursor-click = pointer
+;cursor-scroll = ns-resize
+;modules-center = xwindow
 
 [bar/right]
 monitor = eDP1
@@ -84,30 +84,29 @@ wm-restack = bspwm
 cursor-click = pointer
 modules-center = temperature mem wlan pulseaudio battery1 battery0  date powermenu
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:..% 
-label-maxlen = 20
-label-foreground = #D8DEE9 
-label-padding = 1 
+;[module/xwindow]
+;type = internal/xwindow
+;label = %title:..% 
+;label-maxlen = 20
+;label-foreground = #D8DEE9 
+;label-padding = 1 
 
 ; Used instead of label when there is no window title
-label-empty = "Desktop"
+;label-empty = "Desktop"
 ;label-empty-foreground = ${color.blue-light}
-label-empty-padding = 2
+;label-empty-padding = 2
 
-[module/filesystem]
-type = internal/fs
-interval = 25
-mount-0 = /
-label-foreground = #88c0d0 
-label-mounted = %{F#88C0D0}%mountpoint%%{F-}: %percentage_used% %{F#99C0D0}
-label-unmounted = %mountpoint% not mounted
-label-mounted-underline = #88c0d0
+;[module/filesystem]
+;type = internal/fs
+;interval = 25
+;mount-0 = /
+;label-foreground = #88c0d0 
+;label-mounted = %{F#88C0D0}%mountpoint%%{F-}: %percentage_used% %{F#99C0D0}
+;label-unmounted = %mountpoint% not mounted
+;label-mounted-underline = #88c0d0
 
 [module/bspwm]
 type = internal/bspwm
-
 pin-workspaces = true
 inline-mode = true
 enable-click = true
@@ -124,15 +123,15 @@ ws-icon-5 =VI;%{F#7c30cb}
 
 label-focused = %icon%
 label-focused-background= #000
-label-focused-padding = 1.5
+label-focused-padding = 2 
 
 label-occupied = %icon%
-label-occupied-padding = 1.5
+label-occupied-padding = 1
 label-occupied-foreground = #4C566A
 
 label-urgent = %icon%
-label-urgent-padding = 1
-label-urgent-background = #a8badb
+label-urgent-padding = 2
+label-urgent-background = #ef945f
 
 label-empty = %icon%
 label-empty-foreground = #D8DEE9
@@ -141,50 +140,51 @@ label-empty-padding = 1
 ; Separator in between workspaces
  label-separator = " "
 
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
+;[module/i3]
+;type = internal/i3
+;format = <label-state> <label-mode>
+;index-sort = true
+;wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
+;label-mode-padding = 2
 ;label-mode-foreground = #000
 ;label-mode-background = "#87c155"
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+;label-focused = %index%
+;label-focused-background = ${colors.background-alt}
+;label-focused-underline= ${colors.primary}
+;label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 2
+;label-unfocused = %index%
+;label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+;label-visible = %index%
+;label-visible-background = ${self.label-focused-background}
+;label-visible-underline = ${self.label-focused-underline}
+;label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+;label-urgent = %index%
+;label-urgent-background = ${colors.alert}
+;label-urgent-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
-[module/menu]
-type = custom/text
-content = 
-content-background = #101010
-content-foreground = #4C566A
-click-left = dmenu_run -l 17 -p RUN 
+
+;[module/menu]
+;type = custom/text
+;content = 
+;content-background = #101010
+;content-foreground = #4C566A
+;click-left = dmenu_run -l 17 -p RUN 
 ;content-underline = #4C566A
-content-padding= 1 
+;content-padding= 1 
 
 [module/powermenu]
 type = custom/text
@@ -192,15 +192,15 @@ content = " "
 click-left = ~/.config/polybar/scripts/dmenu.sh &
 content-foreground = #ce77be
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = "cpu  "
-format-prefix-foreground = #d08770
-format-underline = #ff79c6
-label = %percentage%
-label-foreground = #ff79c6 
-label-padding = 1 
+;[module/cpu]
+;type = internal/cpu
+;interval = 2
+;format-prefix = "cpu  "
+;format-prefix-foreground = #d08770
+;format-underline = #ff79c6
+;label = %percentage%
+;label-foreground = #ff79c6 
+;label-padding = 1 
 
 [module/mem]
 type = custom/script
@@ -239,7 +239,6 @@ label-volume = %{F#fcdc9c} %percentage%%{F-}
 format-volume-padding = 1
 label-muted-padding = 1
 label-volume-padding = 1
-;will remove
 label-muted =" M "
 label-muted-foreground = #fcdc9c
 format-margin = 1 
@@ -314,11 +313,11 @@ label-full = "  "
 ;bar-capacity-width = 10
 
 ; Only applies if <animation-charging> is used
-animation-charging-0 = 
-animation-charging-1 = 
+;animation-charging-0 = 
+;animation-charging-1 = 
 
 ; Framerate in milliseconds
-animation-charging-framerate = 750
+;animation-charging-framerate = 750
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -373,5 +372,3 @@ screenchange-reload = true
 [global/wm]
 margin-top = 3
 margin-bottom = 3
-
-; vim:ft=dosini
