@@ -39,7 +39,7 @@ active-light = #313435
 
 [bar/left]
 monitor = eDP1
-width = 16%
+width = 15.2%
 height = 30
 offset-x = 2%
 offset-y = 0.2%
@@ -123,18 +123,20 @@ ws-icon-5 =VI;%{F#7c30cb}
 
 label-focused = %icon%
 label-focused-background= #000
-label-focused-padding = 2 
+label-focused-padding-left = 2 
+label-focused-padding-right = 2 
 
 label-occupied = %icon%
 label-occupied-padding = 1
-label-occupied-foreground = #4C566A
+;label-occupied-foreground = #4C566A
 
 label-urgent = %icon%
-label-urgent-padding = 2
-label-urgent-background = #ef945f
+label-urgent-padding-left = 2
+label-urgent-padding-right = 2
+label-urgent-background = #fff
 
 label-empty = %icon%
-label-empty-foreground = #D8DEE9
+;label-empty-foreground = #D8DEE9
 label-empty-padding = 1
 
 ; Separator in between workspaces
