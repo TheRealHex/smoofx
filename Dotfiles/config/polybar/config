@@ -117,7 +117,7 @@ format = <label-state>
 ws-icon-0 =I;%{F#c29133}
 ws-icon-1 =II;%{F#AD7EA8}
 ws-icon-2 =III;%{F#ef5f73}
-ws-icon-3 =IV;%{F#87c155}
+ws-icon-3 =IV;%{F#92f47f}
 ws-icon-4 =V;%{F#10899b}
 ws-icon-5 =VI;%{F#7c30cb}
 
