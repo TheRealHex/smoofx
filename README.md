@@ -19,11 +19,15 @@
         Paste the fonts in /usr/share/fonts or ~/.local/share/fonts/
 
     ### Config  files
-        Paste the folders inside config folder into ~/.config/
+        Paste the folders inside Dotfiles/config folder into ~/.config/
+            
+    ### Wallpaper
+        Set the wallpaper from Dotfiles/wallpapers
 
     ### Note
-        1. Make sure to configure the polybar's modules per your hardware names like : wlan0, wl01  BAT0, BAT1
+        1. Make sure to configure the polybar's config per your hardware like : wlan0  BAT1
         2. After setting up everything, if you don't see the icons in polybar, install unifont
+        3. Install Numix-Cursor : https://www.xfce-look.org/p/999876/
 
 <br>
 <img src="https://github.com/TheRealHex/smoofx/blob/main/snaps/1.png">
