@@ -30,10 +30,6 @@ bspc config normal_border_color  "#2E3440"
 bspc rule -a Gimp desktop='^6' follow=on
 bspc rule -a Alacritty desktop='^3' follow=on
 bspc rule -a Brave-browser desktop='^1' follow=on
-bspc rule -a 'Sublime_text' desktop='^2' follow=on
-bspc rule -a nheko desktop='^4' follow=on
-bspc rule -a TelegramDesktop desktop='^4' follow=on
-bspc rule -a 'Microsoft Teams - Preview' desktop='^5' follow=on
 
 ######### Other Settings ################
 xsetroot -cursor_name left_ptr &
