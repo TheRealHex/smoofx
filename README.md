@@ -1,6 +1,6 @@
 # smoofx
 
-### <b>Minimal</b> and <b>Elegant</b> dotfiles for your lovely rice
+### <b>Minimal</b> and <b>Elegant</b> dotfiles for your workspace
 
 ### Prerequisite
     WM: BSPWM
