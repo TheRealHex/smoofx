@@ -12,7 +12,7 @@
 
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-bspc monitor -d  I II III IV V VI
+bspc monitor -d  I II III IV V
 
 ########## Window Settings ##############
 bspc config border_width         0
@@ -27,9 +27,11 @@ bspc config focused_border_color "#2E3440"
 bspc config normal_border_color  "#2E3440"
 
 ######### Program settings ################
-bspc rule -a Gimp desktop='^6' follow=on
-bspc rule -a Alacritty desktop='^3' follow=on
 bspc rule -a Brave-browser desktop='^1' follow=on
+bspc rule -a Alacritty desktop='^2' follow=on
+bspc rule -a 'Sublime_text' desktop='^3' follow=on
+bspc rule -a nheko desktop='^4' follow=on
+bspc rule -a Gimp desktop='^5' follow=on
 
 ######### Other Settings ################
 xsetroot -cursor_name left_ptr &
