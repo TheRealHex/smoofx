@@ -39,7 +39,7 @@ active-light = #313435
 
 [bar/left]
 monitor = eDP1
-width = 13%
+width = 14%
 height = 30
 offset-x = 2%
 offset-y = 0.2%
@@ -122,8 +122,8 @@ ws-icon-4 =V;%{F#10899b}
 
 label-focused = %icon%
 label-focused-background= #1a1a1a
-label-focused-padding-left = 2 
-label-focused-padding-right = 2 
+label-focused-padding-left = 2
+label-focused-padding-right = "3"
 
 label-occupied = %icon%
 label-occupied-padding = 1
