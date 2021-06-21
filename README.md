@@ -21,6 +21,12 @@
     ### Config  files
         Paste the folders inside Dotfiles/config folder into ~/.config/
             
+     ### Loike this
+        git clone https://github.com/TheRealHex/smoofx.git
+        cd smoofx/Dotfiles
+        cp -r config/* ~/.config/
+        cp fonts/* ~/.local/share/fonts/
+
     ### Wallpaper
         Set the wallpaper from Dotfiles/wallpapers
 
