@@ -12,16 +12,16 @@ colors:
   normal:
     black:   '0x333333'
     red:     '0xef5f73'
-    green:   '0x92f47f'
-    yellow:  '0xc4a000'
-    blue:    '0x3465a4'
-    magenta: '0x75507b'
-    cyan:    '0x06989a'
-    white:   '0xd3d7cf'
-
-  # Bright colors
+    green:   '0x63ed91'
+    yellow:  '0xffce51'
+    blue:    '0x48b9c7'
+    magenta: '0xad7fa8'
+    cyan:    '0x34e2e2'
+    white:   '0xeeeeec'
+  
+# Bright colors
   bright:
-    black:   '0x88807c'
+    black:   '0x333333'
     red:     '0xef5f73'
     green:   '0x63ed91'
     yellow:  '0xffce51'
