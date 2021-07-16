@@ -82,7 +82,7 @@ font-1 = CaskaydiaCove Nerd Font:size=12;1
 font-2 = unifont:pixelsize=10;2
 wm-restack = bspwm
 cursor-click = pointer
-modules-center = temperature mem wlan pulseaudio battery1 battery0  date powermenu
+modules-center = temperature mem wlan alsa battery1 battery0  date powermenu
 
 ;[module/xwindow]
 ;type = internal/xwindow
@@ -233,6 +233,17 @@ format-padding = 1
 label = %time% %date%
 format-margin = 1
 
+[module/alsa]
+type = internal/alsa
+format-volume = <label-volume>
+label-volume = %{F#fcdc9c} %percentage%%{F-}
+format-volume-padding = 1
+label-muted-padding = 1
+label-volume-padding = 1
+label-muted =" M "
+label-muted-foreground = #fcdc9c
+format-margin = 1
+
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <label-volume>
@@ -242,7 +253,7 @@ label-muted-padding = 1
 label-volume-padding = 1
 label-muted =" M "
 label-muted-foreground = #fcdc9c
-format-margin = 1 
+format-margin = 1
 
 [module/battery1]
 type = internal/battery
@@ -266,7 +277,7 @@ time-format = %H:%M
 ;   <ramp-capacity>
 ;   <animation-charging>
 format-charging = <label-charging>
-format-charging-prefix = "⌁"
+format-charging-prefix = ""
 format-charging-prefix-foreground = "#a3be8c"
 format-charging-foreground = "#a3be8c"
 
@@ -291,13 +302,13 @@ format-full = <label-full>
 ;   %percentage% (default)
 ;   %time%
 ;   %consumption% (shows current charge rate in watts)
-label-charging = " %percentage%%"
+label-charging = " %percentage%% "
 
 ; Available tokens:
 ;   %percentage% (default)
 ;   %time%
 ;   %consumption% (shows current discharge rate in watts)
-label-discharging = " %percentage%%"
+label-discharging = " %percentage%% "
 
 ; Available tokens:
 ;   %percentage% (default)
