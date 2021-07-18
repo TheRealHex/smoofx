@@ -254,6 +254,7 @@ format-volume = <label-volume>
 label-volume = %{F#fcdc9c} %percentage%%{F-}
 format-volume-padding = 1
 label-muted-padding = 1
+mapped = true
 label-volume-padding = 1
 label-muted =" M "
 label-muted-foreground = #fcdc9c
