@@ -55,20 +55,6 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 modules-center = bspwm
 
-;[bar/center]
-;monitor = eDP1
-;width = 12%
-;height = 30
-;offset-x = 44.5%
-;offset-y = 0.2%
-;background = #0c0b0c
-;radius = 11
-;font-0 = CaskaydiaCove Nerd Font:style:Bold:pixelsize=9;2
-;wm-restack = bspwm
-;cursor-click = pointer
-;cursor-scroll = ns-resize
-;modules-center = xwindow
-
 [bar/right]
 monitor = eDP1
 width = 27%
@@ -82,19 +68,7 @@ font-1 = CaskaydiaCove Nerd Font:size=12;1
 font-2 = unifont:pixelsize=10;2
 wm-restack = bspwm
 cursor-click = pointer
-modules-center = temperature mem wlan alsa battery1 battery0  date powermenu
-
-;[module/xwindow]
-;type = internal/xwindow
-;label = %title:..% 
-;label-maxlen = 20
-;label-foreground = #D8DEE9 
-;label-padding = 1 
-
-; Used instead of label when there is no window title
-;label-empty = "Desktop"
-;label-empty-foreground = ${color.blue-light}
-;label-empty-padding = 2
+modules-center = temperature mem wlan alsa battery0  date powermenu
 
 ;[module/filesystem]
 ;type = internal/fs
@@ -124,20 +98,14 @@ label-focused = %icon%
 label-focused-background= #1a1a1a
 label-focused-padding-left = 2
 label-focused-padding-right = "3"
-
 label-occupied = %icon%
 label-occupied-padding = 1
-;label-occupied-foreground = #4C566A
-
 label-urgent = %icon%
 label-urgent-padding-left = 2
 label-urgent-padding-right = 2
 label-urgent-background = #fff
-
 label-empty = %icon%
-;label-empty-foreground = #D8DEE9
 label-empty-padding = 1
-
 ; Separator in between workspaces
  label-separator = " "
 
@@ -146,35 +114,28 @@ label-empty-padding = 1
 ;format = <label-state> <label-mode>
 ;index-sort = true
 ;wrapping-scroll = false
-
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
-
 ;label-mode-padding = 2
 ;label-mode-foreground = #000
 ;label-mode-background = "#87c155"
-
 ; focused = Active workspace on focused monitor
 ;label-focused = %index%
 ;label-focused-background = ${colors.background-alt}
 ;label-focused-underline= ${colors.primary}
 ;label-focused-padding = 2
-
 ; unfocused = Inactive workspace on any monitor
 ;label-unfocused = %index%
 ;label-unfocused-padding = 2
-
 ; visible = Active workspace on unfocused monitor
 ;label-visible = %index%
 ;label-visible-background = ${self.label-focused-background}
 ;label-visible-underline = ${self.label-focused-underline}
 ;label-visible-padding = ${self.label-focused-padding}
-
 ; urgent = Workspace with urgency hint set
 ;label-urgent = %index%
 ;label-urgent-background = ${colors.alert}
 ;label-urgent-padding = 2
-
 ; Separator in between workspaces
 ; label-separator = |
 
@@ -248,18 +209,6 @@ label-muted =" M "
 label-muted-foreground = #fcdc9c
 format-margin = 1
 
-[module/pulseaudio]
-type = internal/pulseaudio
-format-volume = <label-volume>
-label-volume = %{F#fcdc9c} %percentage%%{F-}
-format-volume-padding = 1
-label-muted-padding = 1
-mapped = true
-label-volume-padding = 1
-label-muted =" M "
-label-muted-foreground = #fcdc9c
-format-margin = 1
-
 [module/battery1]
 type = internal/battery
 ; This is useful in case the battery never reports 100% charge
@@ -270,85 +219,25 @@ battery = BAT1
 adapter = AC
 ; Default: 5
 poll-interval = 2
-
-; see "man date" for details on how to format the time string
-; NOTE: if you want to use syntax tags here you need to use %%{...}
-; Default: %H:%M:%S
 time-format = %H:%M
-
-; Available tags:
-;   <label-charging> (default)
-;   <bar-capacity>
-;   <ramp-capacity>
-;   <animation-charging>
 format-charging = <label-charging>
 format-charging-prefix = ""
 format-charging-prefix-foreground = "#a3be8c"
 format-charging-foreground = "#a3be8c"
-
-; Available tags:
-;   <label-discharging> (default)
-;   <bar-capacity>
-;   <ramp-capacity>
-;   <animation-discharging>
 format-discharging = <label-discharging>
 format-discharging-prefix = ""
 format-discharging-prefix-foreground = "#CF727B"
 format-discharging-foreground = "#CF727B"
-; Available tags:
-;   <label-full> (default)
-;   <bar-capacity>
-;   <ramp-capacity>
 format-full = <label-full>
-;format-full-prefix = 
-;format-full-prefix-foreground = ${color.red}
-
-; Available tokens:
-;   %percentage% (default)
-;   %time%
-;   %consumption% (shows current charge rate in watts)
 label-charging = " %percentage%% "
-
-; Available tokens:
-;   %percentage% (default)
-;   %time%
-;   %consumption% (shows current discharge rate in watts)
 label-discharging = " %percentage%% "
-
-; Available tokens:
-;   %percentage% (default)
 label-full = "  " 
-
-; Only applies if <ramp-capacity> is used
-;ramp-capacity-0 = 
-;ramp-capacity-1 = 
-;ramp-capacity-2 = 
-;ramp-capacity-3 = 
-;ramp-capacity-4 = 
-
-; Only applies if <bar-capacity> is used
-;bar-capacity-width = 10
-
-; Only applies if <animation-charging> is used
-;animation-charging-0 = 
-;animation-charging-1 = 
-
-; Framerate in milliseconds
-;animation-charging-framerate = 750
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/battery0]
 type = internal/battery
-
-; This is useful in case the battery never reports 100% charge
 full-at = 99
-
-; Use the following command to list batteries and adapters:
-; $ ls -1 /sys/class/power_supply/
 battery = BAT0
 adapter = AC
-
 poll-interval = 2
 format-charging = <label-charging>
 format-charging-prefix = ""
@@ -362,7 +251,6 @@ label-charging = " %percentage%%"
 label-discharging = " %percentage%%"
 label-full = "  "
 label-full-foreground = "#7bd1ad"
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/temperature]
 type = internal/temperature
