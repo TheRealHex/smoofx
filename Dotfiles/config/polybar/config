@@ -235,6 +235,10 @@ format-margin = 1
 
 [module/alsa]
 type = internal/alsa
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+mapped = true
 format-volume = <label-volume>
 label-volume = %{F#fcdc9c} %percentage%%{F-}
 format-volume-padding = 1
