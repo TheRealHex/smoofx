@@ -32,6 +32,6 @@ colors:
 
 font:
   normal:
-    family: CaskaydiaCove Nerd Font
     style: Bold
-  size: 11.5
+    family: CaskaydiaCove Nerd Font
+  size: 13 
