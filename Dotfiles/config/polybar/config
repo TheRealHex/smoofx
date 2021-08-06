@@ -39,7 +39,7 @@ active-light = #313435
 
 [bar/left]
 monitor = eDP1
-width = 14%
+width = 13.5%
 height = 30
 offset-x = 2%
 offset-y = 0.2%
@@ -68,7 +68,7 @@ font-1 = CaskaydiaCove Nerd Font:size=12;1
 font-2 = unifont:pixelsize=10;2
 wm-restack = bspwm
 cursor-click = pointer
-modules-center = temperature mem wlan alsa battery0  date powermenu
+modules-center = temperature mem wlan alsa battery0 date powermenu
 
 ;[module/filesystem]
 ;type = internal/fs
@@ -88,11 +88,11 @@ enable-scroll = true
 reverse-scroll = false
 format = <label-state>
 
-ws-icon-0 =I;%{F#c29133}
-ws-icon-2 =II;%{F#ef5f73}
-ws-icon-1 =III;%{F#AD7EA8}
-ws-icon-3 =IV;%{F#85bc53}
-ws-icon-4 =V;%{F#10899b}
+ws-icon-0 =I;%{F#ecbe7b}
+ws-icon-1 =II;%{F#51afdd}
+ws-icon-2 =III;%{F#ff6c6b}
+ws-icon-3 =IV;%{F#98be65}
+ws-icon-4 =V;%{F#c678dd}
 
 label-focused = %icon%
 label-focused-background= #1a1a1a
@@ -179,7 +179,7 @@ interface = wlo1
 interval = 5.0 
 format-connected = <label-connected>
 label-connected =" "  
-label-connected-foreground = #8670e0
+label-connected-foreground = #98be65
 format-disconnected = <label-disconnected>
 label-disconnected= 
 label-disconnected-foreground = #CF727B
