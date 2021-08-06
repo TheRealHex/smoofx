@@ -57,9 +57,9 @@ modules-center = bspwm
 
 [bar/right]
 monitor = eDP1
-width = 27%
+width = 24.5%
 height = 30
-offset-x = 71%
+offset-x = 73%
 offset-y = 0.2%
 background = #0c0b0c
 radius = 12
@@ -188,10 +188,10 @@ label-disconnected-foreground = #CF727B
 type = internal/date
 interval = 60 
 time = "%I:%M"
-date-alt = "%d %b %a"
+date-alt = "%b %d %a"
 label-foreground = #eee 
 format-padding = 1 
-label = %time% %date%
+label = %time%%date%
 format-margin = 1
 
 [module/alsa]
@@ -231,7 +231,7 @@ format-discharging-foreground = "#CF727B"
 format-full = <label-full>
 label-charging = " %percentage%% "
 label-discharging = " %percentage%% "
-label-full = "  " 
+label-full = " " 
 
 [module/battery0]
 type = internal/battery
@@ -249,7 +249,7 @@ format-charging-foreground = "#a3be8c"
 format-discharging-foreground = "#CF727B"
 label-charging = " %percentage%%"
 label-discharging = " %percentage%%"
-label-full = "  "
+label-full = " "
 label-full-foreground = "#7bd1ad"
 
 [module/temperature]
