@@ -4,14 +4,13 @@
 
 # For non-systemd init systems.
 case "$(readlink -f /sbin/init)" in
-	*runit*) hib="sudo -A zzz" ;;
 	*openrc*) reb="loginctl reboot"; shut="loginctl poweroff" ;;
 esac
 
 cmds="\
   lock		slock
-  reboot	${reb:-sudo -A reboot}
-  Poweroff	${shut:- sudo shutdown now}
+  reboot	${reb:-loginctl poweroff}
+  power off	${shut:-loginctl poweroff}
   display off 	 xset dpms force off"
 
 choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu -p BYE -l 6 )" || exit 1
