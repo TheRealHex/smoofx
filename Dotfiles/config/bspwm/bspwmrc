@@ -22,30 +22,26 @@ bspc config split_ratio         0.50
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 ########## Border Colors #################
-bspc config focused_border_color "#2E3440"
-bspc config normal_border_color  "#2E3440"
+#bspc config focused_border_color "#2E3440"
+#bspc config normal_border_color  "#2E3440"
 
 ######### Program settings ################
+######## Use xprop WM Class String ########
 bspc rule -a firefox desktop='^1' follow=on
 bspc rule -a chromium desktop='^1' follow=on
 bspc rule -a mpv desktop='^2' follow=on
-bspc rule -a St desktop='^3' follow=on
+bspc rule -a XTerm desktop='^3' follow=on
 bspc rule -a Gimp desktop='^5' follow=on
 
 ######### Other Settings ################
 xsetroot -cursor_name left_ptr &
 xbacklight -set 30
-
-##Tap##
-xinput set-prop 13 332 1
-
-######## MY picom :) ###################
 picom &
 
 #Brightness
 xrandr --output eDP1 --brightness 0.8 --mode 1368x768 --rate 30
 
-######## THe real beauty behind rice ####
+#Wallpaper
 nitrogen --restore &
 
 ######### My Bar ###############
