@@ -30,7 +30,7 @@ XTerm*scrollTtyOutput: false
 
 ! Scrolling by using Shift-PageUp / Shift-PageDown or mousewheel by default ##
 ! Lines of output you can scroll back over
-XTerm*saveLines: 15000
+XTerm*saveLines: 1000
 
 ! Enable copy/paste hotkeyes (mouse highlight = copy ,  shift+Insert = paste)
 XTerm*selectToClipboard: true
@@ -57,7 +57,7 @@ XTerm*vt100.translations: #override \n\
 !
 XTerm*title: XTerminal
 XTerm*background: #0c0b0c
-XTerm*foreground: #eee
+XTerm*foreground: #eeeeee
 
 ! original #86a2b0
 XTerm*colorUL: #eff0eb
