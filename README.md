@@ -6,7 +6,7 @@
     WM: BSPWM
     Container: Polybar
     Compositor: Picom
-    Terminal: Alcaritty (Optional)
+    Terminal: Alcaritty or XTerm
 
 ### Installation
 
