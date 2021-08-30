@@ -1,13 +1,18 @@
+! ## Your Cursor Name ##
 Xcursor.theme: Numix
+
+!## Turn off xterm beep ##
+XTerm*visualBell: True
+
 ! ## Enable a color supported XTerm ##
 XTerm.termName: xterm-256color
 
 ! ## Set xterm window size ##
-XTerm*VT100.geometry: 130x50
+XTerm*VT100.geometry: 79x25
 
 ! ## Set font and fontsize ##
 XTerm*faceName: CaskaydiaCove Nerd Font:style=Bold
-XTerm*faceSize: 14
+XTerm*faceSize: 14.5
 
 ! VT Font Menu: Unreadable
 XTerm*faceSize1: 8
@@ -30,7 +35,7 @@ XTerm*scrollTtyOutput: false
 
 ! Scrolling by using Shift-PageUp / Shift-PageDown or mousewheel by default ##
 ! Lines of output you can scroll back over
-XTerm*saveLines: 1000
+XTerm*saveLines: 15000
 
 ! Enable copy/paste hotkeyes (mouse highlight = copy ,  shift+Insert = paste)
 XTerm*selectToClipboard: true
@@ -57,7 +62,7 @@ XTerm*vt100.translations: #override \n\
 !
 XTerm*title: XTerminal
 XTerm*background: #0c0b0c
-XTerm*foreground: #eeeeee
+XTerm*foreground: #dddddd
 
 ! original #86a2b0
 XTerm*colorUL: #eff0eb
