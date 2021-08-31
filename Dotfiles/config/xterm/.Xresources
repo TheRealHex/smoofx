@@ -1,14 +1,11 @@
 ! ## Your Cursor Name ##
 Xcursor.theme: Numix
 
-!## Turn off xterm beep ##
-XTerm*visualBell: True
-
 ! ## Enable a color supported XTerm ##
 XTerm.termName: xterm-256color
 
 ! ## Set xterm window size ##
-XTerm*VT100.geometry: 79x25
+XTerm*VT100.geometry: 70x20
 
 ! ## Set font and fontsize ##
 XTerm*faceName: CaskaydiaCove Nerd Font:style=Bold
@@ -49,9 +46,9 @@ XTerm*trimSelection: true
 XTerm*vt100.translations: #override \n\
   Ctrl <Key>-: smaller-vt-font() \n\
   Ctrl <Key>+: larger-vt-font() \n\
-  Ctrl <Key>0: set-vt-font(d) \n\
   Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
   Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+
 
 ! ~~~~~~~~~~~~~~~~~~
 ! ## Color Themes ## 
