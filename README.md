@@ -36,6 +36,8 @@
         3. Install Numix-Cursor : https://www.xfce-look.org/p/999876/
         4. Use dmenu for the powermenu button to function, or you can change that
 <br>
+
+<img src="https://github.com/TheRealHex/smoofx/blob/main/snaps/0.png">
 <img src="https://github.com/TheRealHex/smoofx/blob/main/snaps/1.png">
 <img src="https://github.com/TheRealHex/smoofx/blob/main/snaps/2.png">
 
