@@ -5,7 +5,7 @@ Xcursor.theme: Numix
 XTerm.termName: xterm-256color
 
 ! ## Set xterm window size ##
-XTerm*VT100.geometry: 70x20
+XTerm*VT100.geometry: 60x20
 
 ! ## Set font and fontsize ##
 XTerm*faceName: CaskaydiaCove Nerd Font:style=Bold
@@ -48,14 +48,12 @@ XTerm*vt100.translations: #override \n\
   Ctrl <Key>+: larger-vt-font() \n\
   Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
   Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
-
+  Ctrl <Key>W:inoremap
 
 ! ~~~~~~~~~~~~~~~~~~
-! ## Color Themes ## 
+! ## Color Theme ## 
 ! ~~~~~~~~~~~~~~~~~~
 !
-! based on snazzy color theme
-! https://github.com/olstenlarck/urxvt-xterm-snazzy/blob/7c34009a19ade65271e26ef065c678b0fa2abd0d/.Xdefaults
 !
 XTerm*title: XTerminal
 XTerm*background: #0c0b0c
