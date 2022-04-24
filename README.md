@@ -38,5 +38,6 @@
 <br>
 
 <img src="https://github.com/TheRealHex/smoofx/blob/main/Screenshots/0.png">
-<img src="https://github.com/TheRealHex/smoofx/blob/main/Screenshots/1.jpg">
+<img src="https://github.com/TheRealHex/smoofx/blob/main/Screenshots/1.png">
+<img src="https://github.com/TheRealHex/smoofx/blob/main/Screenshots/2.png">
 
