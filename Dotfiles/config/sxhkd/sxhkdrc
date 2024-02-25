@@ -14,53 +14,56 @@ F8
 super+shift+m
 	killall mpv
 
-#mpv-720p
-super+alt+x
-	mpv --profile=720p "$(xclip -o)"
+# Toggle between English (US) and Nepali (Romanized) input methods
+super+alt+i
+  /home/hex/.config/sxhkd/toggle_input.sh &
 
-#mpv-480p
-super+alt+c
+#mpv
+super+alt+h
+	mpv --profile=best "$(xclip -o)"
+super+alt+j
+	mpv --profile=720p "$(xclip -o)"
+super+alt+k
 	mpv --profile=480p "$(xclip -o)"
+super+alt+m
+	mpv --video=no "$(xclip -o)"
 
 # volume-up
-F7
+XF86AudioRaiseVolume
 	amixer set 'Master' 2%+ && amixer set 'Headphone' 1%+
 
 # volume-down
-F6
+XF86AudioLowerVolume
 	amixer set 'Master' 2%- && amixer set 'Headphone' 1%-
 
 # brightness-up
-F10
-	xbacklight -inc 10
+XF86MonBrightnessUp
+	xbacklight -inc 7 
 
 # brightness-down
-F9
-	xbacklight -dec 10
+XF86MonBrightnessDown
+	xbacklight -dec 6
 	
 # terminal emulator
 super + Return
-	alacritty 
+  st
+	# bspc desktop -f ^3 && st 
 
-# thunar
+# Filemanager 
 super + e
-	thunar
+  pcmanfm
 
-# matrix
-super + alt + s 
-	apulse nheko
-
-# Kill nheko
-super + shift + s 
-	killall nheko
-
-# Sublime Text 
-super + alt + z
-	firejail --net=none subl
+# powermenu
+super+p
+  /home/hex/.config/polybar/scripts/dmenu.sh &
 
 # browser
-super + alt + a
-   firejail brave --incognito --apparmor 
+super + alt + z
+	apulse firefox -P heX
+
+# rss reader
+super + alt + r
+  dbus-launch liferea
 
 # lock desktop
 super + l
