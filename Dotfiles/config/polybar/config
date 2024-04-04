@@ -1,53 +1,12 @@
-;====================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-;
-;   The README contains a lot of information
-;
-;==========================================================
-
-[colors]
-background = #0c0b0c
-foreground = ${xrdb:foreground}
-color0 = ${xrdb:color0}
-color1 = ${xrdb:color1}
-color2 = ${xrdb:color2}
-color3 = ${xrdb:color3}
-color4 = ${xrdb:color4}
-color5 = ${xrdb:color5}
-
-color8 = ${xrdb:color8}
-color9 = ${xrdb:color9}
-color10 = ${xrdb:color10}
-color11 = ${xrdb:color11}
-color12 = ${xrdb:color12}
-color13 = ${xrdb:color13}
-color14 = ${xrdb:color14}
-color15 = ${xrdb:color15}
-dark-light = #272A2B 
-active-light = #313435
-
 [bar/left]
 monitor = eDP1
-width = 13.5%
-height = 30
+width = 13%
+height = 27
 offset-x = 2%
-offset-y = 0.2%
+offset-y = 0.5%
 background = #0c0b0c
-radius = 11
+radius = 12
 font-0 = CaskaydiaCove Nerd Font:style:Bold:pixelsize=9;2
-font-1 = CaskaydiaCove Nerd Font:size=12;1
-font-2 = unifont:pixelsize=10;2
 wm-restack = bspwm
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
@@ -57,27 +16,16 @@ modules-center = bspwm
 
 [bar/right]
 monitor = eDP1
-width = 24.5%
-height = 30
-offset-x = 73%
-offset-y = 0.2%
+width = 24%
+height = 27 
+offset-x = 74%
+offset-y = 0.5%
 background = #0c0b0c
 radius = 12
 font-0 = CaskaydiaCove Nerd Font:style:Bold:pixelsize=9;2
-font-1 = CaskaydiaCove Nerd Font:size=12;1
-font-2 = unifont:pixelsize=10;2
 wm-restack = bspwm
 cursor-click = pointer
-modules-center = temperature mem wlan alsa battery0 date powermenu
-
-;[module/filesystem]
-;type = internal/fs
-;interval = 25
-;mount-0 = /
-;label-foreground = #88c0d0 
-;label-mounted = %{F#88C0D0}%mountpoint%%{F-}: %percentage_used% %{F#99C0D0}
-;label-unmounted = %mountpoint% not mounted
-;label-mounted-underline = #88c0d0
+modules-center = temperature mem wlan alsa battery0 battery1 date powermenu
 
 [module/bspwm]
 type = internal/bspwm
@@ -88,11 +36,11 @@ enable-scroll = true
 reverse-scroll = false
 format = <label-state>
 
-ws-icon-0 =I;%{F#ecbe7b}
-ws-icon-1 =II;%{F#51adbb}
-ws-icon-2 =III;%{F#ff6c6b}
-ws-icon-3 =IV;%{F#98be65}
-ws-icon-4 =V;%{F#c678dd}
+ws-icon-0 =I;%{F#dd9761}
+ws-icon-1 =II;%{F#70ace0}
+ws-icon-2 =IV;%{F#fcdc9c}
+ws-icon-3 =III;%{F#dd6161}
+ws-icon-4 =V;%{F#a3be8c}
 
 label-focused = %icon%
 label-focused-background= #1a1a1a
@@ -106,38 +54,7 @@ label-urgent-padding-right = 2
 label-urgent-background = #fff
 label-empty = %icon%
 label-empty-padding = 1
-; Separator in between workspaces
- label-separator = " "
-
-;[module/i3]
-;type = internal/i3
-;format = <label-state> <label-mode>
-;index-sort = true
-;wrapping-scroll = false
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-;label-mode-padding = 2
-;label-mode-foreground = #000
-;label-mode-background = "#87c155"
-; focused = Active workspace on focused monitor
-;label-focused = %index%
-;label-focused-background = ${colors.background-alt}
-;label-focused-underline= ${colors.primary}
-;label-focused-padding = 2
-; unfocused = Inactive workspace on any monitor
-;label-unfocused = %index%
-;label-unfocused-padding = 2
-; visible = Active workspace on unfocused monitor
-;label-visible = %index%
-;label-visible-background = ${self.label-focused-background}
-;label-visible-underline = ${self.label-focused-underline}
-;label-visible-padding = ${self.label-focused-padding}
-; urgent = Workspace with urgency hint set
-;label-urgent = %index%
-;label-urgent-background = ${colors.alert}
-;label-urgent-padding = 2
-; Separator in between workspaces
-; label-separator = |
+label-separator = " "
 
 ;[module/menu]
 ;type = custom/text
@@ -166,20 +83,20 @@ content-foreground = #ce77be
 
 [module/mem]
 type = custom/script
-exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
+exec = free -m | awk '/^Mem:/ {print $3}'
 format = <label>
-label =  %output% 
+label =  %output%
 label-padding = 1
 label-foreground = #70ace0
-format-margin =1 
+format-margin = 1
 
 [module/wlan]
 type = internal/network
-interface = wlo1
+interface = wlan0
 interval = 5.0 
 format-connected = <label-connected>
 label-connected =" "  
-label-connected-foreground = #98be65
+label-connected-foreground = #a1d15c
 format-disconnected = <label-disconnected>
 label-disconnected= 
 label-disconnected-foreground = #CF727B
@@ -211,27 +128,23 @@ format-margin = 1
 
 [module/battery1]
 type = internal/battery
-; This is useful in case the battery never reports 100% charge
 full-at = 99
-; Use the following command to list batteries and adapters:
-; $ ls -1 /sys/class/power_supply/
 battery = BAT1
 adapter = AC
-; Default: 5
 poll-interval = 2
 time-format = %H:%M
 format-charging = <label-charging>
-format-charging-prefix = ""
+format-charging-prefix = " "
 format-charging-prefix-foreground = "#a3be8c"
 format-charging-foreground = "#a3be8c"
 format-discharging = <label-discharging>
-format-discharging-prefix = ""
+format-discharging-prefix = "  "
 format-discharging-prefix-foreground = "#CF727B"
 format-discharging-foreground = "#CF727B"
 format-full = <label-full>
-label-charging = " %percentage%% "
-label-discharging = " %percentage%% "
-label-full = " " 
+label-charging = " %percentage%%"
+label-discharging = " %percentage%%"
+label-full = "  " 
 
 [module/battery0]
 type = internal/battery
@@ -241,22 +154,22 @@ adapter = AC
 poll-interval = 2
 format-charging = <label-charging>
 format-charging-prefix = ""
-format-charging-prefix-foreground = "#a3be8c"
+format-charging-prefix-foreground = "#87c7a2"
 format-discharging = <label-discharging>
 format-discharging-prefix = ""
 format-discharging-prefix-foreground = "#CF727B"
-format-charging-foreground = "#a3be8c"
+format-charging-foreground = "#87c7a2"
 format-discharging-foreground = "#CF727B"
 label-charging = " %percentage%%"
 label-discharging = " %percentage%%"
 label-full = " "
-label-full-foreground = "#7bd1ad"
+label-full-foreground = "#87c7a2"
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
-label-foreground = #e09e70
+label-foreground = #ddb061
 format = <ramp> <label>
 format-warn = <ramp>  <label-warn>
 format-warn-underline = #b48ead
@@ -264,16 +177,17 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = #f2835e 
 ramp-0 = 
-ramp-foreground = #e09e70
+ramp-foreground = #ddb061
 
 [settings]
 screenchange-reload = true
-;compositing-background = picom
+compositing-background = picom
 ;compositing-background = screen
 ;compositing-foreground = source
-;compositing-border = over
+compositing-border = over
 ;pseudo-transparency = false
 
 [global/wm]
 margin-top = 3
 margin-bottom = 3
+
