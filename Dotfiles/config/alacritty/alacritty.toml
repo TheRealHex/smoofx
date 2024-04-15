@@ -1,0 +1,19 @@
+colors.draw_bold_text_with_bright_colors = true
+
+[colors.primary]
+background = '#0c0b0c'
+foreground = '#cfcfcf'
+
+[colors.normal]
+black = '#333333'
+red = '#ef5f73'
+green = '#63ed91'
+yellow = '#ffce51'
+blue = '#48b9c7'
+magenta = '#ad7fa8'
+cyan = '#34e2e2'
+white = '#dddddd'
+
+[font]
+normal = { style = "Bold", family = "CaskaydiaCove Nerd Font" }
+size = 12
