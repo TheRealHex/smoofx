@@ -9,28 +9,16 @@
     Terminal: Alcaritty or XTerm
 
 ### Installation
-
-    Clone this repo first :D
-
-    ### Packages
-        Install the prerequisite packages firs :D
-
-    ### Fonts
-        Paste the fonts in /usr/share/fonts or ~/.local/share/fonts/
-
-    ### Config  files
-        Paste the folders inside Dotfiles/config folder into ~/.config/
-            
-     ### Loike this
+    Instructions
         git clone https://github.com/TheRealHex/smoofx.git
         cd smoofx/Dotfiles
         cp -r config/* ~/.config/
         cp fonts/* ~/.local/share/fonts/
 
-    ### Wallpaper
+    Wallpaper
         Set the wallpaper from Dotfiles/wallpapers
 
-    ### Note
+    Note
         1. Make sure to configure the polybar's config per your hardware like : wlan0  BAT1
         2. After setting up everything, if you don't see the icons in polybar, install unifont
         3. Install Numix-Cursor : https://www.xfce-look.org/p/999876/
