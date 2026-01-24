@@ -6,7 +6,7 @@
     WM: BSPWM
     Container: Polybar
     Compositor: Picom
-    Terminal: Alcaritty or XTerm
+    Terminal: Alcaritty / XTerm
 
 ### Installation
     Instructions
@@ -14,6 +14,11 @@
         cd smoofx/Dotfiles
         cp -r config/* ~/.config/
         cp fonts/* ~/.local/share/fonts/
+        cd dmenu/ && sudo make install
+
+        St terminal is compiled from lukesmith's config: 
+        mv config/St/st ~/.local/bin/ or to /usr/bin/
+        
 
     Wallpaper
         Set the wallpaper from Dotfiles/wallpapers
