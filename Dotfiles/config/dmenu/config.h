@@ -9,16 +9,16 @@ static const char *fonts[] = {
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#fff", "#000" },
-	[SchemeSel] = { "#000", "#63ed91" },
-	[SchemeOut] = { "#000000", "#00ffff" },
+	[SchemeNorm] = { "#dedede", "#000" },
+	[SchemeSel] = { "#000", "#dedede" },
+	[SchemeOut] = { "#000", "#000" },
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
-static unsigned int lines      = 0;
+static unsigned int lines = 0;
 
 /*
  * Characters not considered part of a word while deleting words
  * for example: " /?\"&[]"
  */
 static const char worddelimiters[] = " ";
-static const unsigned int border_width = 4;
+static const unsigned int border_width = 0;
