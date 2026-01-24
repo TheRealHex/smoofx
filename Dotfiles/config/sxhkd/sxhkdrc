@@ -4,74 +4,78 @@
 
 # Screenshot
 Print
-	maim -s | xclip -selection clipboard -t image/png 
+	maim -s | xclip -selection clipboard -t image/png
 
 #mic-toggle
 F8
-	amixer set Capture toggle
-
-#mpv kill
-super+shift+m
-	killall mpv
-
-# Toggle between English (US) and Nepali (Romanized) input methods
-super+alt+i
-  /home/hex/.config/sxhkd/toggle_input.sh &
+#amixer set Capture toggle
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 #mpv
-super+alt+h
+super + alt + b # best quality 
 	mpv --profile=best "$(xclip -o)"
-super+alt+j
+
+super + alt + h # 1080p
+	mpv --profile=1080p "$(xclip -o)"
+
+super + alt + j # 720p
 	mpv --profile=720p "$(xclip -o)"
-super+alt+k
-	mpv --profile=480p "$(xclip -o)"
-super+alt+m
+
+super + alt + m # only audio
 	mpv --video=no "$(xclip -o)"
+
+super + shift + m
+	killall mpv
 
 # volume-up
 XF86AudioRaiseVolume
-	amixer set 'Master' 2%+ && amixer set 'Headphone' 1%+
+#amixer set 'Master' 2%+ && amixer set 'Headphone' 1%+
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 # volume-down
 XF86AudioLowerVolume
-	amixer set 'Master' 2%- && amixer set 'Headphone' 1%-
+#amixer set 'Master' 2%- && amixer set 'Headphone' 1%-
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 # brightness-up
 XF86MonBrightnessUp
-	xbacklight -inc 7 
+	xbacklight -inc 7
 
 # brightness-down
 XF86MonBrightnessDown
 	xbacklight -dec 6
-	
+
 # terminal emulator
 super + Return
   st
-	# bspc desktop -f ^3 && st 
+	# bspc desktop -f ^3 && st
 
-# Filemanager 
+# Filemanager
 super + e
-  pcmanfm
+	dbus-launch thunar
 
 # powermenu
 super+p
   /home/hex/.config/polybar/scripts/dmenu.sh &
 
+super + d
+	polybar-msg -p $(pidof polybar) cmd toggle
+
 # browser
 super + alt + z
-	apulse firefox -P heX
+	firefox --private
 
 # rss reader
 super + alt + r
   dbus-launch liferea
 
 # lock desktop
-super + l
-	slock
+#super + l
+	#slock
 
 # program launcher
 super + space
-	dmenu_run -p heX -l 19  
+	dmenu_run -p heX -l 19
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -86,8 +90,12 @@ super + alt + p
 #
 
 # quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
+super + alt + q
+	bspc quit
+
+# restart bspwm
+super + alt + r
+	bspc wm -r
 
 # close and kill
 super + {_,shift + }w
