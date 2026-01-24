@@ -14,10 +14,10 @@
         cd smoofx/Dotfiles
         cp -r config/* ~/.config/
         cp fonts/* ~/.local/share/fonts/
-        cd dmenu/ && sudo make install
+        cd Dotfiles/dmenu/ && sudo make clean install
 
         St terminal is compiled from lukesmith's config: 
-        mv config/St/st ~/.local/bin/ or to /usr/bin/
+        cp Dotfiles/St/st ~/.local/bin/ or to /usr/bin/
         
 
     Wallpaper
