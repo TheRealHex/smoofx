@@ -8,8 +8,9 @@ case "$(readlink -f /sbin/init)" in
 esac
 
 cmds="\
+  logout		killall bspwm
   lock		slock
-  reboot	${reb:-loginctl poweroff}
+  reboot	${reb:-loginctl reboot}
   power off	${shut:-loginctl poweroff}
   display off 	 xset dpms force off"
 

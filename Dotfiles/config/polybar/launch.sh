@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
-# Restart polybar left and right 
+# Kill any existing Polybar instances
 killall -q polybar
-polybar left 2>&1 | tee -a /tmp/polybar1.log & disown
-polybar right 2>&1 | tee -a /tmp/polybar2.log & disown
 
+# Sleep for a short duration to let Polybar load properly
+sleep 3
+
+# Start Polybar in the background
+polybar dock & disown
+
+# Start the autohide command in the background
+# autohide & disown
