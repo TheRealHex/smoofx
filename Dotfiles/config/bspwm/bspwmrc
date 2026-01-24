@@ -29,7 +29,6 @@ xsetroot -xcf /usr/share/icons/Numix-Cursor/cursors/left_ptr 16
 xrandr --output eDP1 --brightness 0.8 --mode 1368x768 --rate 60
 xbacklight -set 20
 
-# xrandr --output eDP1 --mode 1368x768 --rate 30
 picom &
 # redshift -l lat:long &
 
@@ -37,12 +36,4 @@ picom &
 ~/.fehbg
 
 ######### My Polybar ###############
-polybar left &
-polybar right &
-
-## Undervolt & underclock
-# sudo intel-undervolt apply
-# sudo cpupower frequency-set --governor ondemand --min 500MHz --max 1.5GHz
-
-# ram management
-# earlyoom -r 0 --avoid '(^|/)(dinit|bspwm|polybar|picom)$' --prefer '(^|/)(figma-linux|java|google-chrome-stable)$' -m 10 &
+polybar dock &
