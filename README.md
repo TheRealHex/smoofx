@@ -8,6 +8,8 @@
     Compositor: Picom
     Terminal: Alcaritty / XTerm
 
+    package: (xdo) to raise polybar above the windows.
+
 ### Installation
     Instructions
         git clone https://github.com/TheRealHex/smoofx.git
