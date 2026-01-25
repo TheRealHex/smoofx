@@ -56,10 +56,10 @@ super + e
 
 # powermenu
 super+p
-  /home/hex/.config/polybar/scripts/dmenu.sh &
+  ~/.config/polybar/scripts/dmenu.sh &
 
 super + d
-	polybar-msg -p $(pidof polybar) cmd toggle
+	bash ~/.config/polybar/scripts/toggle_bar.sh
 
 # browser
 super + alt + z
@@ -70,12 +70,12 @@ super + alt + r
   dbus-launch liferea
 
 # lock desktop
-#super + l
-	#slock
+alt + l
+	slock
 
 # program launcher
 super + space
-	dmenu_run -p heX -l 19
+	dmenu_run -p $USER -l 19
 
 # make sxhkd reload its configuration files:
 super + Escape
