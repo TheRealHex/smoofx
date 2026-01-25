@@ -7,5 +7,5 @@ if [ -z "$PID" ]; then
     # If Polybar is not running, start it
     polybar dock &
     # If Polybar is running, hide it
-    polybar-msg cmd toggle
 fi
+    polybar-msg cmd toggle
